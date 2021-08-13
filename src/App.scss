@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+
+/* Exo thin font from Google. */
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+$bg-url: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAACjSURBVEhL7ZdBCsQgDEUTS0EFKfT+91RRTE2mbmZvZjF58FGC5Oku4nVdlHOG8zwlRAQ7QEQopUj/EALgrIlJSzzGkD2mlIgLi51i7s2r9x7wvm+qtQKn9/4e2wMLnXOflW+x65XfLBfHvTV1TKyGidUwsRomVsPEaphYjT8Uy3A9o8XyYYxRBvrjOCS7Rl2Wtdakvwz0k7kn1b+TvPg3n7YAD44xYhDSX2NoAAAAAElFTkSuQmCC';
+$bg-width: 30px;
+$bg-height: 30px;
+
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: $bg-width $bg-height;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: $bg-width $bg-height;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: $bg-width $bg-height;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: $bg-width $bg-height;
+  }
+}
+
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: $bg-width $bg-height;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: $bg-width $bg-height;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: $bg-width $bg-height;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: $bg-width $bg-height;
+  }
+}
+
+/* Main styles */
+body {
+  margin-top: 13.5rem;
+
+  @media (max-width: 780px) {
+    margin-top: 18rem;
+  }
+
+  color: white;
+  font: 400 16px/1.5 exo, ubuntu, 'segoe ui', helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  background: url($bg-url) repeat 0 0;
+
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite; /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 0.92s infinite; /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 0.92s infinite; /* Opera 12+ */
+  animation: bg-scrolling-reverse 0.92s infinite; /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+
+  &::before {
+    content: 'MIKEDANZON';
+    overflow: hidden;
+    @media (max-width: 780px) {
+      font-size: 4rem;
+    }
+    font-size: 8rem;
+    font-weight: 100;
+    font-style: normal;
+  }
+}
+
+.wrapper {
+  .main {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -40%);
+    transform: translate(-50%, -40%);
+
+    .main-text {
+      font-size: 30px;
+      padding-bottom: 30px;
+      color: rgb(212, 212, 212);
+      text-shadow: 0px 4px 3px rgba(114, 114, 114, 0.4),
+        0px 8px 13px rgba(149, 149, 149, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-icons {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 40px;
+        height: auto;
+      }
+
+      span {
+        position: absolute;
+        top: 60%;
+        margin-top: 10px;
+        margin-left: -125px;
+        padding: 0.55rem 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        white-space: nowrap;
+        color: #000;
+        border-radius: 50px;
+        background-color: #fff;
+        box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1),
+          0 5px 15px rgba(0, 0, 0, 0.07);
+
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+
+      :hover {
+        span {
+          top: 100%;
+          opacity: 0.9;
+        }
+      }
+
+      .icon-github {
+        padding-right: 20px;
+      }
+    }
+  }
+}

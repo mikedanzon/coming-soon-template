@@ -10,7 +10,7 @@
  */
 
 /* Exo thin font from Google. */
-@import url(https://fonts.googleapis.com/css?family=Exo:100);
+@import url('https://fonts.googleapis.com/css?family=Exo:100');
 
 /* Background data (Original source: https://subtlepatterns.com/grid-me/) */
 $bg-url: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAACjSURBVEhL7ZdBCsQgDEUTS0EFKfT+91RRTE2mbmZvZjF58FGC5Oku4nVdlHOG8zwlRAQ7QEQopUj/EALgrIlJSzzGkD2mlIgLi51i7s2r9x7wvm+qtQKn9/4e2wMLnXOflW+x65XfLBfHvTV1TKyGidUwsRomVsPEaphYjT8Uy3A9o8XyYYxRBvrjOCS7Rl2Wtdakvwz0k7kn1b+TvPg3n7YAD44xYhDSX2NoAAAAAElFTkSuQmCC';
@@ -62,16 +62,15 @@ $bg-height: 30px;
 
 /* Main styles */
 body {
-  margin-top: 13.5rem;
+  margin-top: 10rem;
 
   @media (max-width: 780px) {
-    margin-top: 18rem;
+    margin-top: 13rem;
   }
 
   color: white;
   font: 400 16px/1.5 exo, ubuntu, 'segoe ui', helvetica, arial, sans-serif;
   text-align: center;
-  /* img size is 50x50 */
   background: url($bg-url) repeat 0 0;
 
   -webkit-animation: bg-scrolling-reverse 0.92s infinite; /* Safari 4+ */
@@ -99,7 +98,7 @@ body {
   .main {
     margin: 0;
     position: absolute;
-    top: 40%;
+    top: 25rem;
     left: 50%;
     -ms-transform: translate(-50%, -40%);
     transform: translate(-50%, -40%);
